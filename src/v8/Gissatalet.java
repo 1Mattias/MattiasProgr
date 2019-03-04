@@ -75,7 +75,7 @@ public class Gissatalet {
 				difficulty = Scanner.nextInt();
 				break;
 				
-				// Skriver ut ditt totala antal gissningar och antalet spel spelade
+				// Skriver ut ditt totala antal gissningar och antalet spel spelade.
 				
 			case 2:
 				System.out.println("Thanks for playing");
