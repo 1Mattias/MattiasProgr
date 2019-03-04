@@ -8,12 +8,11 @@ public class Gissatalet {
 	public static void main(String[] args) {
 		Scanner Scanner = new Scanner(System.in);
 		
-		// den börjar med att fråga dig hur svårt du vill göra det för dig själv och sparar ditt svar till en variabel
+		// den börjar med att fråga dig hur svårt du vill göra det för dig själv och sparar ditt svar till en variabel.
 		
 		int difficulty = 0;
 		System.out.println("Type your desired guessing range( between 0 and X)");
 		difficulty = Scanner.nextInt();
-		
 		
 		Random Random = new Random();
 
@@ -49,7 +48,7 @@ public class Gissatalet {
 
 			}
 			
-			//Skriver hur många gånger du gissat denna "rundan" och hur många gånger totalt och sedan frågar om du vill köra igen
+			//Skriver hur många gånger du gissat denna "rundan" och hur många gånger totalt och sedan frågar om du vill köra igen.
 			
 			System.out.println("You Have Won!");
 			System.out.println("You guessed " + numberOfTries + " Times");
@@ -76,7 +75,7 @@ public class Gissatalet {
 				difficulty = Scanner.nextInt();
 				break;
 				
-				// Skriver ut ditt totala antal gissningar och antalet spel spelade
+				// Skriver ut ditt totala antal gissningar och antalet spel spelade.
 				
 			case 2:
 				System.out.println("Thanks for playing");
@@ -94,4 +93,3 @@ public class Gissatalet {
 	}
 	
 }
-
