@@ -3,9 +3,7 @@ package v11;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-
 public class SecureDoors {
-
 
 	public static void main(String[] args) {
 		ArrayList<String> checkdIn;
