@@ -13,11 +13,11 @@ public class SecureDoors {
 		for (int i = 0; i < numOfLogs; i++) {
 			String[] entry = scan.nextLine().split(" ");
 
-			if (entry[0].equals("entry") && checkdIn.contains(entry[1])) {
+			if (entry[0].equals("enter") && checkdIn.contains(entry[1])) {
 				System.out.println(entry[1] + " entered (ANOMALY)");
 			} else if (entry[0].equals("exit") && !checkdIn.contains(entry[1])) {
-				System.out.println(entry[1] + " entered (ANOMALY)");
-			} else if (entry[0].equals("entry")) {
+				System.out.println(entry[1] + " " + entry[0] + "ed (ANOMALY)");
+			} else if (entry[0].equals("enter")) {
 				checkdIn.add(entry[1]);
 				System.out.println(entry[1] + " entered");
 			} else {
