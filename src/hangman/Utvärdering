@@ -1,0 +1,68 @@
+## Utvärdering - Hänga gubbe
+
+### Skriv en utvärdering om ditt spel:
+* Finns det några buggar? 
+  * Jag hittade inga
+* Kan programmet krascha?
+  * Jag hittade inget sätt det kunde krascha på
+* Hur avslutas spelet?
+  skriver en till bokstav eller av sig självt
+* Vilka extra nämnvärda funktionaliteter finns i ditt spel? *Exempelvis:*
+  * En gubbe ritas ut med tecken i konsolen.
+  * Jag har använt mig utav HangmanConsoleWindow.
+* Stötte du på några problem du fastnade på? 
+  * Inte direkt
+* Var något annat svårt eller utmanande? 
+  * Inte direkt
+* Var något lätt?
+  * det var inte svårt
+* Hade du tillräckligt med förkunskaper? 
+  * Det skulle jag nog säga
+* Ser du några förbättringar som kan göras? 
+  * Det mästa om jag skall vara ärlig 
+* Är det någon ytterligare funktion du hade velat lägga till men som du saknar kunskaper för att göra?
+  Nej, jag bara orkar inte
+* Hur fungerar programmet? 
+  * Flödesschema som Progschema.png
+* Hur väl har du hållit dig till din planering?
+  Väldigt väl
+  * Är ditt nuvarande programflöde likt den planeringen du gjore i början?
+  ja
+* Använder du någon slags kod vi inte gått igenom? 
+  * Det vet jag faktiskt inte
+
+
+<br>
+
+### Självbedömning: *(Om inget av alternativen passar in kan du i värsta fall lägga till ett eget alternativ)*
+  * Min planering är... (motivera)
+      * Enkelt gjord
+      Det är VÄLDIGT simpelt gjort
+      Vet inte hur jag skall motivera mer än att det är i princip så simpelt det går att göra det
+      
+  * Mitt program är av... (motivera)
+      * Enkel karaktär
+     Enkel planering och låga ambitioner leder till en enkel karaktär.
+     
+   * Mitt program kommunicerar med användaren på... (motivera)
+      * Ett tillfredställande sätt
+    Det finns mycket mer man kam göra med informationen som ges
+   
+   * Mina kommentarer/dokumentation är... (motivera)
+      * Enkelt gjorda
+      Enkla kommentarer för enkel kod
+      
+   * Min källkod är... (motivera) *(ni kan blanda)*
+      * Tydlig, strukturerad och lättläslig
+      Det är väldigt kort och detta gör det även tydlig och lättläst
+
+<br>
+
+### Självskattning.
+  * Hur mycket tid la du på uppgiften? Var det tillräckligt för att du blev nöjd med resultatet?
+  ABSOLUT inte, jag har lagt för lite tid på det helt enkelt
+  * Har du lärt dig något under projektets gång?
+  Det vill jag inte påstå
+  * Nu i efterhand, hade du önskat att du gjort något annorlunda? (Planerat mer/mindre, lagt ned mer tid, varit bättre förberedd, etc.)
+  jag borde ha planerat mer, lagt ned mer tid, varit bättre förberedd, och velat få det bättre
+  
