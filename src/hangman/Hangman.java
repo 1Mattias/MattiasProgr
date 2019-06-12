@@ -12,14 +12,14 @@ public class Hangman {
 		while(playing) {
 		
 		Scanner Scanner = new Scanner(System.in);
-		String[] wordToGuess = { "test" }; // ordlista
+		String[] wordToGuess = { "test", "banan", "stockholm", "sverige" }; // ordlista
 		String word = wordToGuess[(int) Math.floor(Math.random() * wordToGuess.length)]; // väljer ett av orden
 		String[] answer = new String[word.length()]; // gör answer lika long som ordet som valts
 		String[] answerUnderscore = new String[word.length()];
 		
 		for (int i = 0; i < word.length(); i++) { // En for-loop som klipper upp word och lägger in det i answer
 			answer[i] = word.substring(i, i + 1);
-			
+			System.out.println(answer[i]);
 		}
 
 		for (int i = 0; i < word.length(); i++) { // gör en sträckad version av answer arrayen
