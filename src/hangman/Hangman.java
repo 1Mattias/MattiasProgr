@@ -1,202 +1,124 @@
 package hangman;
 
+import java.util.Scanner;
+
 public class Hangman {
 
-
-	private static String[] words = { "terminator", "banana", "computer", "cow", "rain", "water" }; // Ord siom går det kan bli
-	private static String word = words[(int) (Math.random() * words.length)]; // väljer ett slumpmässigt ord
-	private static String guessWord = new String(new char[word.length()]).replace("\0", "_");
-	private static int count = 0;  //Räknar fel
-	private static HangmanConsoleWindow window; // Fönstret som öppnas
-
 	public static void main(String[] args) {
+
+		boolean playing = true;
+		int tries = 0; // hur många gånger man har gissat fel
 		
-		//öppnar fönstret
-		window = new HangmanConsoleWindow();
-
-	//skriver ut frågan om en ny bokstav så länge count < 10 och det inte finns _ kvar
-		while (count < 10 && guessWord.contains("_")) {
-			window.clear();
-			hangmanImage();
+		while(playing) {
+		
+		Scanner Scanner = new Scanner(System.in);
+		String[] wordToGuess = { "test" }; // ordlista
+		String word = wordToGuess[(int) Math.floor(Math.random() * wordToGuess.length)]; // väljer ett av orden
+		String[] answer = new String[word.length()]; // gör answer lika long som ordet som valts
+		String[] answerUnderscore = new String[word.length()];
+		
+		for (int i = 0; i < word.length(); i++) { // En for-loop som klipper upp word och lägger in det i answer
+			answer[i] = word.substring(i, i + 1);
 			
-			
-			window.println("Guess any letter in the word");
+		}
 
-			for (int i = 0; i < guessWord.length(); i++) {
-				window.print(guessWord.charAt(i) + " ");
+		for (int i = 0; i < word.length(); i++) { // gör en sträckad version av answer arrayen
+			answerUnderscore[i] = "_";
+		}
+		/*
+		 * Välkommnar en till spelet
+		 * Startar while loopen som är själva spelet
+		 * 
+		 */
+		
+		
+		
+		
+		int lettersLeft = word.length();
+		
+		System.out.println("Gissa en bokstav i taget! (BARA BOKSTÄVER)");
+		System.out.println("Du bara gissa fel 8 gånger så var försiktig! Lycka till!");
+		tries++;
+		
+		//Själva spelet hanteras i denna while loop
+		while (lettersLeft > 0 & tries <= 7) {
+			String guess;
+			guess = Scanner.nextLine();
+
+			for (int j = 0; j < word.length(); j++) {
+					
+					//Om gissningen är redan gissad
+				if (guess.equals(answerUnderscore[j])) {
+					System.out.println("Du behöver inte skriva samma bokstav igen");
+					break;
+					//om man gissar rätt sätter den in det i answerUnderscore
+				} else if (answer[j].equals(guess)) {
+
+					answerUnderscore[j] = guess;
+					lettersLeft--;
+					tries--;
+					System.out.print(answerUnderscore[j] + " ");
+					//Skriver ut ordet med understräck och bokstäver man gissat
+				} else {
+					System.out.print(answerUnderscore[j] + " ");
+					
+				}
+				
+				
 			}
 			
-			
-			window.println();
-
-
-			String guess = window.nextString();
-			
-			hang(guess);
+			//skriver ut hur många gånger du har gissat fel
+			tries ++;
+			System.out.println();
+			System.out.println();
+			System.out.println("Felgissningar: " + tries);
+			System.out.println("Kom ihåg att efter 8 så förlorar du!");
 
 		}
+		/*
+		 * Gratulerar om du vann eller säger att du har förlorat.
+		 * Sätter playing till false
+		 * 
+		 */
+		System.out.println("");
+		System.out.println("");
+		if(tries < 8) {System.out.println("Grattis, du vann, och tack för att du har spelat!");}
+		else if(tries >= 8) {System.out.println("Du förlorade tyvärr");}
 		
-		window.exit();
+		playing = false;
 
-	}
+		System.out.println("");
 
-	
-	// skriver ut ordet tomt, sen skriver det med dina gissningar
-	public static void hang(String guess) {
-		String newWord = "";
-		for (int i = 0; i < word.length(); i++) {
-			if (word.charAt(i) == guess.charAt(0)) {
-				newWord += guess.charAt(0);
-			} else if (guessWord.charAt(i) != '_') {
-				newWord += word.charAt(i);
-			} else {
-				newWord += "_";
-			}
-		}
-
-		// lägger till på count om du gissar fel
 		
-		if (guessWord.equals(newWord)) {
-			count++;
-		} else {
-		//else ingenting	
-			guessWord = newWord;
-		}
-		//när man har vunnit så skrivs grattis och stänger programmet
-		if (guessWord.equals(word)) {
-			window.println("Correct! You win! The word was " + word);
-			window.println("Exiting in 3 seconds");
-			try {
-				Thread.sleep(3000);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-			System.exit(0);
-		}
-	}
+		// frågar om du vill spela igen och utför ditt val med hjälp av en switchcase
+		System.out.println("Skriv 1 om du vill spela igen");
+		System.out.println("Skriv 2 om du vill avsluta");
+		
+		
+		
+		int choice = Scanner.nextInt();
+		switch (choice) {
 
-	// switchcase för att skriva ut/rita den hängda gubben
-	
-	public static void hangmanImage() {
-		switch (count) {
+		//gör playing till true som får loppen att starta om, och gör tries till noll
 		case 1:
-			window.println("Wrong guess, try again");
-			window.println();
-			window.println();
-			window.println();
-			window.println();
-			window.println("___|___");
-			window.println();
+			playing = true;
+			tries = 0;
+			
 			break;
 
+		// Tackar or får spelet att stängas av
 		case 2:
-			window.println("Wrong guess, try again");
-			window.println("   |");
-			window.println("   |");
-			window.println("   |");
-			window.println("   |");
-			window.println("   |");
-			window.println("   |");
-			window.println("   |");
-			window.println("___|___");
+			
+			System.out.println("tack för att du har spelat!");
+
+			
 			break;
 
-		case 3:
-			window.println("Wrong guess, try again");
-			window.println("   ____________");
-			window.println("   |");
-			window.println("   |");
-			window.println("   |");
-			window.println("   |");
-			window.println("   |");
-			window.println("   |");
-			window.println("   | ");
-			window.println("___|___");
-			break;
-
-		case 4:
-			window.println("Wrong guess, try again");
-			window.println("   ____________");
-			window.println("   |          _|_");
-			window.println("   |         /   \\");
-			window.println("   |        |     |");
-			window.println("   |         \\_ _/");
-			window.println("   |");
-			window.println("   |");
-			window.println("   |");
-			window.println("___|___");
-			break;
-
-		case 5:
-			window.println("Wrong guess, try again");
-			window.println("   ____________");
-			window.println("   |          _|_");
-			window.println("   |         /   \\");
-			window.println("   |        |     |");
-			window.println("   |         \\_ _/");
-			window.println("   |           |");
-			window.println("   |           |");
-			window.println("   |");
-			window.println("___|___");
-			break;
-			
-		case 6:
-			window.println("Wrong guess, try again");
-			window.println("   ____________");
-			window.println("   |          _|_");
-			window.println("   |         /   \\");
-			window.println("   |        |     |");
-			window.println("   |         \\_ _/");
-			window.println("   |           |");
-			window.println("   |           |");
-			window.println("   |            \\");
-			window.println("___|___          \\");
-			break;
-	
-		case 7:
-			window.println("Wrong guess, try again");
-			window.println("   ____________");
-			window.println("   |          _|_");
-			window.println("   |         /   \\");
-			window.println("   |        |     |");
-			window.println("   |         \\_ _/");
-			window.println("   |           |");
-			window.println("   |           |");
-			window.println("   |          / \\ ");
-			window.println("___|___      /   \\");
-			break;
-			
-		case 8:
-			window.println("Wrong guess, try again");
-			window.println("   ____________");
-			window.println("   |          _|_");
-			window.println("   |         /   \\");
-			window.println("   |        |     |");
-			window.println("   |         \\_ _/");
-			window.println("   |           |_");
-			window.println("   |           | \\");
-			window.println("   |          / \\ ");
-			window.println("___|___      /   \\");
-			break;
-			
-		case 9:
-			window.println("GAME OVER!");
-			window.println("   ____________");
-			window.println("   |          _|_");
-			window.println("   |         /   \\");
-			window.println("   |        |     |");
-			window.println("   |         \\_ _/");
-			window.println("   |          _|_");
-			window.println("   |         / | \\");
-			window.println("   |          / \\ ");
-			window.println("___|___      /   \\");
-			window.println("GAME OVER! The word was " + word);
-			break;
-			
-		case 10:
-			window.println(" ");
-			break;
-			
 		}
+		
+		}
+		
+		
+		
 	}
 }
