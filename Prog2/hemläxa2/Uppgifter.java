@@ -6,12 +6,14 @@ public class Uppgifter {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
-			
 			Scanner sc = new Scanner(System.in);
-		 	String bakot = reverse(sc);
-		 	System.out.println("Det blir " + "'" + bakot + "'" + "baklänges");
-		 
+	 	
+			
+			String objekt[] = generisk(sc);
+			
+			//String bakot = reverse(sc);
+		 	//System.out.println("Det blir " + "'" + bakot + "'" + " baklänges");
+		 	
 		 	//int total = okand(sc);
 	        //System.out.println("Det totala är " + total);
 
@@ -41,8 +43,17 @@ public class Uppgifter {
 	     	   bakot += str.charAt(i);
 	        }
 	 		
+	        reverse(sc);
 	        return bakot;
+	        
 	 	}
+	    
+	    public static String generisk(Scanner sc) {
+	    	
+	    	
+	    	
+	    	return objekt[];
+	    }
 		
 	}
 
