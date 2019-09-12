@@ -7,6 +7,6 @@ public class Uppgift4 {
     {
         Input = input;
     }
-
+    
 	
 }
