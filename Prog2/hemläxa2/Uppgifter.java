@@ -8,29 +8,19 @@ public class Uppgifter {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 			Scanner sc = new Scanner(System.in);
-	 	
-			
-			
-			
-			
+	 				
 		 	//int total = okand(sc);
 	        //System.out.println("Det totala är " + total);
 
+//		    System.out.println("Skriv det som du vill ha baklänges");
+//		    String str = sc.nextLine();
+//		    String backwards = reverse(str);
+//		    System.out.println("Det blir " + "'" + backwards + "'" + " baklänges");
 			
-			
-//		        System.out.println("Skriv det som du vill ha baklänges");
-//		        String str = sc.nextLine();
-//		        String backwards = reverse(str);
-//		        System.out.println("Det blir " + "'" + backwards + "'" + " baklänges");
-//		   
 			//ArrayList<Object> jae = Nae();
 	        //System.out.println(jae);
-			
-			
-			
-			
+				
 	    }	
-	    
 	    
 	    public static ArrayList<Object> Nae() {
 	        Scanner sc = new Scanner(System.in);
@@ -54,10 +44,6 @@ public class Uppgifter {
 		        return reverse(str.substring(1)) + str.charAt(0);
 		    }
 			
-			
-			
-	    
-
 	    public static int okand(Scanner sc) {
 	        int total = 0;
 	        int i=0;
