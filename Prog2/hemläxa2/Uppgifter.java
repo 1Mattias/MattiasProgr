@@ -23,12 +23,15 @@ public class Uppgifter {
 //		        String backwards = reverse(str);
 //		        System.out.println("Det blir " + "'" + backwards + "'" + " baklänges");
 //		   
-			ArrayList<Object> jae = Nae();
-
-	        System.out.println(jae);
-
-	    }
-
+			//ArrayList<Object> jae = Nae();
+	        //System.out.println(jae);
+			
+			
+			
+			
+	    }	
+	    
+	    
 	    public static ArrayList<Object> Nae() {
 	        Scanner sc = new Scanner(System.in);
 	        int random = (int)(Math.random() * 10);
