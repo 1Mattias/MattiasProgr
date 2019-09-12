@@ -1,5 +1,6 @@
 package hemläxa2;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Uppgifter {
@@ -9,15 +10,50 @@ public class Uppgifter {
 			Scanner sc = new Scanner(System.in);
 	 	
 			
-			String objekt[] = generisk(sc);
 			
-			//String bakot = reverse(sc);
-		 	//System.out.println("Det blir " + "'" + bakot + "'" + " baklänges");
-		 	
+			
+			
 		 	//int total = okand(sc);
 	        //System.out.println("Det totala är " + total);
 
+			
+			
+//		        System.out.println("Skriv det som du vill ha baklänges");
+//		        String str = sc.nextLine();
+//		        String backwards = reverse(str);
+//		        System.out.println("Det blir " + "'" + backwards + "'" + " baklänges");
+//		   
+			ArrayList<Object> jae = Nae();
+
+	        System.out.println(jae);
+
 	    }
+
+	    public static ArrayList<Object> Nae() {
+	        Scanner sc = new Scanner(System.in);
+	        int random = (int)(Math.random() * 10);
+	        ArrayList<Object> objekt = new ArrayList<Object>();
+	        for(int i = 0; i < random; i++) {
+	            System.out.println("Skriv ett ord.");
+	            Object in = (Object) sc.nextLine();
+	            objekt.add(in);
+
+	        }
+	        sc.close();
+	        return objekt;
+
+	    }
+
+		    public static String reverse(String str) {
+		        if(str.isEmpty())
+		            return str;
+
+		        return reverse(str.substring(1)) + str.charAt(0);
+		    }
+			
+			
+			
+	    
 
 	    public static int okand(Scanner sc) {
 	        int total = 0;
@@ -34,27 +70,7 @@ public class Uppgifter {
 	        return total;
 	    }
 	    
-	    public static String reverse(Scanner sc){  
-	        System.out.println("Skriv det som du vill ha baklänges");
-	        String bakot = sc.nextLine();
-	        String str = bakot;
-	        bakot = "";
-	        for(int i = str.length() - 1; i >= 0; i--) {
-	     	   bakot += str.charAt(i);
-	        }
-	 		
-	        reverse(sc);
-	        return bakot;
-	        
-	 	}
-	    
-	    public static String generisk(Scanner sc) {
-	    	
-	    	
-	    	
-	    	return objekt[];
-	    }
-		
+	  
 	}
 
 
