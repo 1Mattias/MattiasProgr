@@ -1,4 +1,4 @@
-package hemläxa2;
+package hem2;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -10,12 +10,12 @@ public class Uppgifter {
 			Scanner sc = new Scanner(System.in);
 	 				
 		 	//int total = okand(sc);
-	        //System.out.println("Det totala är " + total);
+	        //System.out.println("Det totala ï¿½r " + total);
 
-//		    System.out.println("Skriv det som du vill ha baklänges");
+//		    System.out.println("Skriv det som du vill ha baklï¿½nges");
 //		    String str = sc.nextLine();
 //		    String backwards = reverse(str);
-//		    System.out.println("Det blir " + "'" + backwards + "'" + " baklänges");
+//		    System.out.println("Det blir " + "'" + backwards + "'" + " baklï¿½nges");
 			
 			//ArrayList<Object> jae = Nae();
 	        //System.out.println(jae);

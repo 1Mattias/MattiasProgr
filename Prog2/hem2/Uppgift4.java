@@ -1,4 +1,4 @@
-package hemläxa2;
+package hem2;
 
 public class Uppgift4 {
 
